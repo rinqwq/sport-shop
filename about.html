@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас - SportShop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">SportShop</span>
+                </div>
+                
+                <nav class="nav" id="nav">
+                    <a href="index.html" class="nav-link">Главная</a>
+                    <a href="catalog.html" class="nav-link">Каталог</a>
+                    <a href="about.html" class="nav-link active">О нас</a>
+                    <a href="#contacts" class="nav-link">Контакты</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <button class="search-btn" id="searchBtn" aria-label="Поиск">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M13 13L17 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <button class="cart-btn" id="cartBtn" aria-label="Корзина">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M3 3H4.5L6.5 13H16.5L18 6H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="7" cy="17" r="1" fill="currentColor"/>
+                            <circle cx="16" cy="17" r="1" fill="currentColor"/>
+                        </svg>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    <button class="menu-toggle" id="menuToggle" aria-label="Меню">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Search Panel -->
+        <div class="search-panel" id="searchPanel">
+            <div class="container">
+                <div class="search-box">
+                    <input type="text" placeholder="Поиск товаров..." id="searchInput" class="search-input">
+                    <button class="search-close" id="searchClose" aria-label="Закрыть поиск">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M5 5L15 15M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">О нас</h2>
+                <p class="about-text">
+                    SportShop - это профессиональный магазин спортивных товаров с многолетним опытом работы на рынке.
+                    Мы предлагаем только качественную продукцию от ведущих мировых брендов, способную удовлетворить потребности как начинающих спортсменов, так и профессионалов.
+                    Наша миссия - помочь вам достичь спортивных целей и поддерживать активный образ жизни.
+                    В нашем ассортименте вы найдете широкий выбор товаров для различных видов спорта: фитнес, бег, футбол, теннис и многое другое.
+                    Мы гарантируем быструю доставку по всей стране, профессиональную консультацию и отличное обслуживание.
+                    Приходите к нам - мы оформим покупку быстро и удобно!
+                </p>
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-icon">✓</div>
+                        <h3 class="feature-title">Качество</h3>
+                        <p class="feature-text">Только оригинальная продукция</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">✓</div>
+                        <h3 class="feature-title">Доставка</h3>
+                        <p class="feature-text">Быстрая доставка по всей стране</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">✓</div>
+                        <h3 class="feature-title">Гарантия</h3>
+                        <p class="feature-text">Официальная гарантия на товары</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacts -->
+    <section class="contacts" id="contacts">
+        <div class="container">
+            <h2 class="section-title">Контакты</h2>
+            <div class="contacts-content">
+                <div class="contact-info-section">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-info">
+                            <h3>Адрес</h3>
+                            <p>Москва, Петровка 2</p>
+                        </div>
+                    </div>
+                    <div id="map" style="width: 100%; height: 400px; border-radius: 12px;"></div>
+                </div>
+                <div class="contacts-grid">
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-info">
+                            <h3>Телефон</h3>
+                            <p>+7 (495) 123-45-67</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-info">
+                            <h3>Email</h3>
+                            <p>info@sportshop.ru</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🕒</div>
+                        <div class="contact-info">
+                            <h3>Режим работы</h3>
+                            <p>Пн-Вс: 9:00 - 21:00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <span class="logo-icon">⚡</span>
+                        <span class="logo-text">SportShop</span>
+                    </div>
+                    <p class="footer-text">Магазин спортивных товаров для активной жизни</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Навигация</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="#contacts">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Категории</h3>
+                    <ul class="footer-links">
+                        <li><a href="catalog.html">Фитнес</a></li>
+                        <li><a href="catalog.html">Бег</a></li>
+                        <li><a href="catalog.html">Спорт</a></li>
+                        <li><a href="catalog.html">Снаряжение</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Контакты</h3>
+                    <ul class="footer-links">
+                        <li>+7 (495) 123-45-67</li>
+                        <li>info@sportshop.ru</li>
+                        <li>Москва, Петровка 2</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SportShop. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Корзина</h2>
+                <button class="modal-close" id="cartModalClose" aria-label="Закрыть">&times;</button>
+            </div>
+            <div class="modal-body" id="cartItems">
+                <p class="empty-cart">Корзина пуста</p>
+            </div>
+            <div class="modal-footer">
+                <div class="cart-total">
+                    <span>Итого:</span>
+                    <span class="total-price" id="totalPrice">0 ₽</span>
+                </div>
+                <button class="btn btn-primary btn-full" id="checkoutBtn">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=fab152b5-cf3e-455b-95ab-3f7beeb2e172&lang=ru_RU" type="text/javascript"></script>
+    <script src="script.js"></script>
+    <script>
+        // Инициализация Яндекс.Карт
+        ymaps.ready(init);
+        
+        function init() {
+            // Создаем карту
+            var myMap = new ymaps.Map("map", {
+                center: [55.76, 37.64], // Центр карты (Москва)
+                zoom: 14
+            });
+            
+            // Геокодирование адреса
+            var geocoder = ymaps.geocode("Москва, Петровка 2");
+            
+            geocoder.then(
+                function (res) {
+                    // Получаем координаты
+                    var coordinates = res.geoObjects.get(0).geometry.getCoordinates();
+                    
+                    // Устанавливаем центр карты на найденные координаты
+                    myMap.setCenter(coordinates);
+                    
+                    // Создаем метку
+                    var myPlacemark = new ymaps.Placemark(coordinates, {
+                        hintContent: 'SportShop',
+                        balloonContent: 'Магазин SportShop<br>Москва, Петровка 2'
+                    }, {
+                        preset: 'islands#orangeSportIcon'
+                    });
+                    
+                    // Добавляем метку на карту
+                    myMap.geoObjects.add(myPlacemark);
+                },
+                function (err) {
+                    console.log('Ошибка геокодирования:', err);
+                    // В случае ошибки используем координаты по умолчанию для Москвы
+                    var defaultPlacemark = new ymaps.Placemark([55.76, 37.64], {
+                        hintContent: 'SportShop',
+                        balloonContent: 'Магазин SportShop<br>Москва, Петровка 2'
+                    }, {
+                        preset: 'islands#orangeSportIcon'
+                    });
+                    myMap.geoObjects.add(defaultPlacemark);
+                }
+            );
+        }
+    </script>
+</body>
+</html>

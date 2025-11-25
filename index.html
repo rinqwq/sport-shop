@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportShop - Магазин спортивных товаров</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">SportShop</span>
+                </div>
+                
+                <nav class="nav" id="nav">
+                    <a href="index.html" class="nav-link active">Главная</a>
+                    <a href="catalog.html" class="nav-link">Каталог</a>
+                    <a href="about.html" class="nav-link">О нас</a>
+                    <a href="#contacts" class="nav-link">Контакты</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <button class="search-btn" id="searchBtn" aria-label="Поиск">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M13 13L17 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <button class="cart-btn" id="cartBtn" aria-label="Корзина">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M3 3H4.5L6.5 13H16.5L18 6H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="7" cy="17" r="1" fill="currentColor"/>
+                            <circle cx="16" cy="17" r="1" fill="currentColor"/>
+                        </svg>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    <button class="menu-toggle" id="menuToggle" aria-label="Меню">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Search Panel -->
+        <div class="search-panel" id="searchPanel">
+            <div class="container">
+                <div class="search-box">
+                    <input type="text" placeholder="Поиск товаров..." id="searchInput" class="search-input">
+                    <button class="search-close" id="searchClose" aria-label="Закрыть поиск">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M5 5L15 15M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Спортивные товары для активной жизни</h1>
+                <p class="hero-subtitle">Качественная экипировка для достижения ваших целей</p>
+                <button class="btn btn-primary" onclick="window.location.href='catalog.html'">
+                    Перейти в каталог
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Популярные товары</h2>
+            <div class="featured-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image"><img src="images/sneakers.jpg" alt="Беговые кроссовки"></div>
+                    <div class="product-info">
+                        <div class="product-category">Бег</div>
+                        <h3 class="product-name">Беговые кроссовки</h3>
+                        <p class="product-description">Легкие кроссовки для бега с амортизацией</p>
+                        <div class="product-footer">
+                            <span class="product-price">7 500 ₽</span>
+                            <button class="add-to-cart-btn" onclick="addToCart(3)">
+                                Купить
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image"><img src="images/SoccerBall.jpg" alt="Футбольный мяч"></div>
+                    <div class="product-info">
+                        <div class="product-category">Спорт</div>
+                        <h3 class="product-name">Футбольный мяч</h3>
+                        <p class="product-description">Профессиональный футбольный мяч размер 5</p>
+                        <div class="product-footer">
+                            <span class="product-price">2 000 ₽</span>
+                            <button class="add-to-cart-btn" onclick="addToCart(5)">
+                                Купить
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image"><img src="images/MiSmartBand9-fitness-tracker.jpg" alt="Фитнес-браслет"></div>
+                    <div class="product-info">
+                        <div class="product-category">Снаряжение</div>
+                        <h3 class="product-name">Фитнес-браслет</h3>
+                        <p class="product-description">Мониторинг пульса и активности</p>
+                        <div class="product-footer">
+                            <span class="product-price">4 500 ₽</span>
+                            <button class="add-to-cart-btn" onclick="addToCart(4)">
+                                Купить
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image"><img src="images/dumbbell.jpg" alt="Гантели 10кг"></div>
+                    <div class="product-info">
+                        <div class="product-category">Фитнес</div>
+                        <h3 class="product-name">Гантели 10кг</h3>
+                        <p class="product-description">Профессиональные гантели с неопреновым покрытием</p>
+                        <div class="product-footer">
+                            <span class="product-price">3 500 ₽</span>
+                            <button class="add-to-cart-btn" onclick="addToCart(1)">
+                                Купить
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="featured-cta">
+                <button class="btn btn-secondary" onclick="window.location.href='catalog.html'">
+                    Посмотреть все товары в каталоге
+                </button>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <span class="logo-icon">⚡</span>
+                        <span class="logo-text">SportShop</span>
+                    </div>
+                    <p class="footer-text">Магазин спортивных товаров для активной жизни</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Навигация</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="#contacts">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Категории</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Фитнес</a></li>
+                        <li><a href="#">Бег</a></li>
+                        <li><a href="#">Спорт</a></li>
+                        <li><a href="#">Снаряжение</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Контакты</h3>
+                    <ul class="footer-links">
+                        <li>+7 (495) 123-45-67</li>
+                        <li>info@sportshop.ru</li>
+                        <li>Москва, Петровка 2</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SportShop. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Корзина</h2>
+                <button class="modal-close" id="cartModalClose" aria-label="Закрыть">&times;</button>
+            </div>
+            <div class="modal-body" id="cartItems">
+                <p class="empty-cart">Корзина пуста</p>
+            </div>
+            <div class="modal-footer">
+                <div class="cart-total">
+                    <span>Итого:</span>
+                    <span class="total-price" id="totalPrice">0 ₽</span>
+                </div>
+                <button class="btn btn-primary btn-full" id="checkoutBtn">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
