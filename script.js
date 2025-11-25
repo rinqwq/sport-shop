@@ -234,7 +234,7 @@ cartModal.addEventListener('click', (e) => {
 
 checkoutBtn.addEventListener('click', () => {
     if (cart.length > 0) {
-        alert('Спасибо за заказ! В реальном магазине здесь была бы форма оформления заказа.');
+        alert('Спасибо за заказ!');
         cart = [];
         updateCart();
         cartModal.classList.remove('active');
