@@ -1,4 +1,3 @@
-// ===== PRODUCTS DATA =====
 const products = [
     {
         id: 1,
@@ -98,12 +97,10 @@ const products = [
     }
 ];
 
-// ===== STATE MANAGEMENT =====
 let cart = [];
 let currentFilter = 'all';
 let searchQuery = '';
 
-// ===== DOM ELEMENTS =====
 const menuToggle = document.getElementById('menuToggle');
 const nav = document.getElementById('nav');
 const searchBtn = document.getElementById('searchBtn');
@@ -121,13 +118,11 @@ const productsGrid = document.getElementById('productsGrid');
 const filterBtns = document.querySelectorAll('.filter-btn');
 const categoryCards = document.querySelectorAll('.category-card');
 
-// ===== MOBILE MENU TOGGLE =====
 menuToggle.addEventListener('click', () => {
     menuToggle.classList.toggle('active');
     nav.classList.toggle('active');
 });
 
-// Close menu when clicking on nav link
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
         menuToggle.classList.remove('active');
@@ -135,10 +130,8 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
-// ===== SEARCH PANEL =====
 searchBtn.addEventListener('click', () => {
     searchPanel.classList.add('active');
-    // Small delay to ensure the panel is fully displayed before focusing
     setTimeout(() => searchInput.focus(), 100);
 });
 
@@ -154,7 +147,7 @@ searchInput.addEventListener('input', (e) => {
     renderProducts();
 });
 
-// ===== CART FUNCTIONALITY =====
+
 function addToCart(productId) {
     const product = products.find(p => p.id === productId);
     const existingItem = cart.find(item => item.id === productId);
@@ -175,11 +168,9 @@ function removeFromCart(productId) {
 }
 
 function updateCart() {
-    // Update cart count
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     cartCount.textContent = totalItems;
     
-    // Update cart modal
     if (cart.length === 0) {
         cartItems.innerHTML = '<p class="empty-cart">Корзина пуста</p>';
         totalPrice.textContent = '0 ₽';
@@ -201,11 +192,9 @@ function updateCart() {
         checkoutBtn.disabled = false;
     }
     
-    // Save cart to localStorage
     localStorage.setItem('sportshop_cart', JSON.stringify(cart));
 }
 
-// Load cart from localStorage
 function loadCart() {
     const savedCart = localStorage.getItem('sportshop_cart');
     if (savedCart) {
@@ -214,7 +203,6 @@ function loadCart() {
     }
 }
 
-// Cart Modal
 cartBtn.addEventListener('click', () => {
     cartModal.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -242,7 +230,6 @@ checkoutBtn.addEventListener('click', () => {
     }
 });
 
-// ===== PRODUCT FILTERING =====
 filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         filterBtns.forEach(b => b.classList.remove('active'));
@@ -252,13 +239,11 @@ filterBtns.forEach(btn => {
     });
 });
 
-// Category cards filtering
 categoryCards.forEach(card => {
     card.addEventListener('click', () => {
         const category = card.dataset.category;
         currentFilter = category;
-        
-        // Update filter buttons
+
         filterBtns.forEach(btn => {
             btn.classList.remove('active');
             if (btn.dataset.filter === category) {
@@ -266,24 +251,19 @@ categoryCards.forEach(card => {
             }
         });
         
-        // Scroll to catalog
         document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
         
-        // Render filtered products
         renderProducts();
     });
 });
 
-// ===== RENDER PRODUCTS =====
 function renderProducts() {
     let filteredProducts = products;
     
-    // Filter by category
     if (currentFilter !== 'all') {
         filteredProducts = filteredProducts.filter(p => p.category === currentFilter);
     }
-    
-    // Filter by search query
+
     if (searchQuery) {
         filteredProducts = filteredProducts.filter(p => 
             p.name.toLowerCase().includes(searchQuery) ||
@@ -324,7 +304,6 @@ function getCategoryName(category) {
     return categories[category] || category;
 }
 
-// ===== NOTIFICATIONS =====
 function showNotification(message) {
     const notification = document.createElement('div');
     notification.style.cssText = `
@@ -352,7 +331,6 @@ function showNotification(message) {
     }, 2000);
 }
 
-// Add animations to CSS dynamically
 const style = document.createElement('style');
 style.textContent = `
     @keyframes slideInUp {
@@ -379,7 +357,6 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// ===== SMOOTH SCROLL FOR NAV LINKS =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
@@ -393,7 +370,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ===== ACTIVE NAV LINK ON SCROLL =====
+
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section[id]');
     const scrollY = window.pageYOffset;
@@ -412,8 +389,7 @@ window.addEventListener('scroll', () => {
             });
         }
     });
-    
-    // Activate home link when at top
+
     if (scrollY < 100) {
         document.querySelectorAll('.nav-link').forEach(link => {
             link.classList.remove('active');
@@ -424,12 +400,10 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// ===== INITIALIZE =====
 document.addEventListener('DOMContentLoaded', () => {
     loadCart();
     renderProducts();
 
-    // Add fade-in animation for elements
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -444,7 +418,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    // Observe all major sections
     document.querySelectorAll('section, .product-card, .category-card, .feature, .contact-item').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
@@ -453,9 +426,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// ===== KEYBOARD NAVIGATION =====
+
 document.addEventListener('keydown', (e) => {
-    // Close modals with Escape key
     if (e.key === 'Escape') {
         if (cartModal.classList.contains('active')) {
             cartModal.classList.remove('active');
@@ -469,7 +441,6 @@ document.addEventListener('keydown', (e) => {
         }
     }
 
-    // Open search with Ctrl/Cmd + K
     if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
         e.preventDefault();
         searchPanel.classList.add('active');

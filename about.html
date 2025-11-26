@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header -->
+
     <header class="header">
         <div class="container">
             <div class="header-content">
@@ -50,7 +50,6 @@
             </div>
         </div>
         
-        <!-- Search Panel -->
         <div class="search-panel" id="searchPanel">
             <div class="container">
                 <div class="search-box">
@@ -65,7 +64,6 @@
         </div>
     </header>
 
-    <!-- About Section -->
     <section class="about">
         <div class="container">
             <div class="about-content">
@@ -99,7 +97,6 @@
         </div>
     </section>
 
-    <!-- Contacts -->
     <section class="contacts" id="contacts">
         <div class="container">
             <h2 class="section-title">Контакты</h2>
@@ -141,7 +138,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -185,7 +181,6 @@
         </div>
     </footer>
 
-    <!-- Cart Modal -->
     <div class="modal" id="cartModal">
         <div class="modal-content">
             <div class="modal-header">
@@ -208,28 +203,23 @@
     <script src="https://api-maps.yandex.ru/2.1/?apikey=fab152b5-cf3e-455b-95ab-3f7beeb2e172&lang=ru_RU" type="text/javascript"></script>
     <script src="script.js"></script>
     <script>
-        // Инициализация Яндекс.Карт
+
         ymaps.ready(init);
         
         function init() {
-            // Создаем карту
+
             var myMap = new ymaps.Map("map", {
-                center: [55.76, 37.64], // Центр карты (Москва)
+                center: [55.76, 37.64], 
                 zoom: 14
             });
             
-            // Геокодирование адреса
             var geocoder = ymaps.geocode("Москва, Петровка 2");
             
             geocoder.then(
                 function (res) {
-                    // Получаем координаты
                     var coordinates = res.geoObjects.get(0).geometry.getCoordinates();
-                    
-                    // Устанавливаем центр карты на найденные координаты
                     myMap.setCenter(coordinates);
-                    
-                    // Создаем метку
+
                     var myPlacemark = new ymaps.Placemark(coordinates, {
                         hintContent: 'SportShop',
                         balloonContent: 'Магазин SportShop<br>Москва, Петровка 2'
@@ -237,12 +227,11 @@
                         preset: 'islands#orangeSportIcon'
                     });
                     
-                    // Добавляем метку на карту
+
                     myMap.geoObjects.add(myPlacemark);
                 },
                 function (err) {
                     console.log('Ошибка геокодирования:', err);
-                    // В случае ошибки используем координаты по умолчанию для Москвы
                     var defaultPlacemark = new ymaps.Placemark([55.76, 37.64], {
                         hintContent: 'SportShop',
                         balloonContent: 'Магазин SportShop<br>Москва, Петровка 2'

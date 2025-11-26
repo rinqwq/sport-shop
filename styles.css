@@ -1,4 +1,4 @@
-/* ===== RESET & BASE STYLES ===== */
+
 * {
     margin: 0;
     padding: 0;
@@ -28,14 +28,12 @@ body {
     overflow-x: hidden;
 }
 
-/* ===== CONTAINER ===== */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 24px;
 }
 
-/* ===== HEADER ===== */
 .header {
     position: fixed;
     top: 0;
@@ -178,7 +176,6 @@ body {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Search Panel - FIXED */
 .search-panel {
     position: absolute;
     top: 80px;
@@ -247,7 +244,6 @@ body {
     transform: rotate(90deg);
 }
 
-/* ===== HERO SECTION ===== */
 .hero {
     margin-top: 80px;
     background: linear-gradient(135deg, var(--dark-gray) 0%, #2a2a2c 100%);
@@ -276,7 +272,6 @@ body {
     color: rgba(255, 255, 255, 0.9);
 }
 
-/* ===== BUTTONS ===== */
 .btn {
     padding: 16px 40px;
     font-family: 'Montserrat', sans-serif;
@@ -306,7 +301,6 @@ body {
     width: 100%;
 }
 
-/* ===== CATEGORIES ===== */
 .categories {
     padding: 80px 0;
     background-color: var(--light-gray);
@@ -343,7 +337,6 @@ body {
     color: var(--dark-gray);
 }
 
-/* ===== FEATURED PRODUCTS ===== */
 .featured-products {
     padding: 80px 0;
 }
@@ -370,7 +363,6 @@ body {
     color: var(--white);
 }
 
-/* ===== CATALOG ===== */
 .catalog {
     padding: 80px 0;
 }
@@ -525,7 +517,6 @@ body {
     transform: scale(1.05);
 }
 
-/* ===== ABOUT SECTION ===== */
 .about {
     padding: 80px 0;
     background-color: var(--light-gray);
@@ -580,7 +571,6 @@ body {
     color: var(--text-light);
 }
 
-/* ===== CONTACTS ===== */
 .contacts {
     padding: 80px 0;
 }
@@ -640,14 +630,12 @@ body {
     color: var(--text-light);
 }
 
-/* Map Container */
 #map {
     width: 100%;
     height: 100%;
     border: none;
 }
 
-/* ===== FOOTER ===== */
 .footer {
     background-color: var(--dark-gray);
     color: var(--white);
@@ -713,7 +701,6 @@ body {
     color: rgba(255, 255, 255, 0.6);
 }
 
-/* ===== MODAL ===== */
 .modal {
     display: none;
     position: fixed;
@@ -872,15 +859,11 @@ body {
     font-size: 28px;
 }
 
-/* ===== FIX FOR ALL IMAGES ===== */
 img {
     max-width: 100%;
     height: auto;
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
-
-/* Large Desktops (1440px and above) */
 @media (min-width: 1440px) {
     .container {
         max-width: 1400px;
@@ -895,14 +878,12 @@ img {
     }
 }
 
-/* Desktops (1200px - 1439px) */
 @media (max-width: 1439px) {
     .container {
         max-width: 1140px;
     }
 }
 
-/* Small Desktops and Tablets Landscape (1024px - 1199px) */
 @media (max-width: 1199px) {
     .container {
         max-width: 960px;
@@ -928,14 +909,12 @@ img {
     }
 }
 
-/* Tablets (768px - 1023px) */
 @media (max-width: 1023px) {
     .container {
         max-width: 720px;
         padding: 0 20px;
     }
 
-    /* Header & Navigation */
     .nav {
         position: fixed;
         top: 80px;
@@ -970,7 +949,6 @@ img {
         display: flex;
     }
 
-    /* Hero Section */
     .hero {
         padding: 80px 0;
     }
@@ -983,7 +961,6 @@ img {
         font-size: 18px;
     }
 
-    /* Categories */
     .categories {
         padding: 60px 0;
     }
@@ -1001,7 +978,6 @@ img {
         font-size: 56px;
     }
 
-    /* Catalog */
     .catalog,
     .about,
     .contacts {
@@ -1030,7 +1006,6 @@ img {
         padding: 20px;
     }
 
-    /* About Section */
     .about-text {
         font-size: 17px;
         margin-bottom: 50px;
@@ -1040,7 +1015,6 @@ img {
         gap: 30px;
     }
 
-    /* Contacts */
     .contacts-content {
         flex-direction: column;
         gap: 40px;
@@ -1059,7 +1033,6 @@ img {
         padding: 24px;
     }
 
-    /* Footer */
     .footer {
         padding: 60px 0 0;
     }
@@ -1070,7 +1043,6 @@ img {
         margin-bottom: 40px;
     }
 
-    /* Search Panel */
     .search-panel {
         top: 80px;
     }
@@ -1084,7 +1056,6 @@ img {
         padding: 0 20px;
     }
 
-    /* Modal */
     .modal-content {
         width: 95%;
         margin: 20px;
@@ -1097,7 +1068,6 @@ img {
     }
 }
 
-/* Mobile Landscape and Small Tablets (577px - 767px) */
 @media (max-width: 767px) {
     .container {
         padding: 0 16px;
@@ -1181,7 +1151,6 @@ img {
         gap: 32px;
     }
 
-    /* Search Panel Mobile */
     .search-panel {
         top: 70px;
     }
@@ -1197,7 +1166,6 @@ img {
     }
 }
 
-/* Mobile Portrait (up to 576px) */
 @media (max-width: 576px) {
     .container {
         padding: 0 16px;
@@ -1322,7 +1290,6 @@ img {
         height: 120px;
     }
 
-    /* Search Panel Small Mobile */
     .search-panel {
         top: 64px;
     }
@@ -1333,7 +1300,6 @@ img {
     }
 }
 
-/* Extra Small Mobile (up to 375px) */
 @media (max-width: 375px) {
     .hero-title {
         font-size: 24px;
@@ -1373,7 +1339,6 @@ img {
     }
 }
 
-/* Tiny Mobile (up to 320px) */
 @media (max-width: 320px) {
     .container {
         padding: 0 12px;
